@@ -1,0 +1,42 @@
+student_tematicky_okruh(vsetko).
+student_zapisany_predmet(mxx_110_00,"Telesná výchova a šport (1)",1,z).
+student_zapisany_predmet(ain_171_10,"Programovanie (3)",1,z).
+student_zapisany_predmet(ain_130_16,"Programovanie (1)",1,z).
+student_zapisany_predmet(ain_222_15,"Databázy (2)",1,l).
+student_zapisany_predmet(ain_221_15,"Databázy (1)",1,z).
+student_zapisany_predmet(ain_121_15,"Matematika (1) - Úvod do matematického myslenia",1,z).
+student_zapisany_predmet(ain_140_16,"Princípy počítačov - hardvér",1,z).
+student_zapisany_predmet(ain_160_15,"Matematika (3) - Diskrétna matematika",1,z).
+student_zapisany_predmet(ain_172_00,"Programovanie (4)",1,l).
+student_zapisany_predmet(mxx_232_10,"Anglický jazyk (4)",1,l).
+student_zapisany_predmet(ain_188_17,"Matematika (2) - Matematická analýza",1,l).
+student_zapisany_predmet(ain_170_13,"Programovanie (2)",1,l).
+student_zapisany_predmet(ain_430_15,"Programovacie paradigmy",2,z).
+student_zapisany_predmet(ain_301_15,"Základy počítačovej grafiky a spracovania obrazu",2,z).
+student_zapisany_predmet(ain_305_15,"Deduktívne databázy",2,z).
+student_zapisany_predmet(inf_175_18,"Pravdepodobnosť a štatistika",2,z).
+student_zapisany_predmet(mat_560_00,"Webovská grafika",2,z).
+student_zapisany_predmet(inf_176_15,"UNIX pre administrátorov",2,z).
+student_zapisany_predmet(inf_283_15,"Počítačové siete (1)",2,l).
+student_zapisany_predmet(ain_186_20,"Princípy počítačov – systémové programovanie",2,l).
+student_zapisany_predmet(ain_189_15,"Webové aplikácie (1)",2,l).
+student_zapisany_predmet(ain_412_15,"Matematika (4)  - Logika pre informatikov",2,l).
+student_zapisany_predmet(ain_251_11,"Základy podnikania a manažmentu",2,l).
+student_zapisany_predmet(mat_552_10,"Geometria pre grafikov (2)",2,l).
+student_zapisany_predmet(ain_670_00,"Expertné systémy",2,l).
+student_zapisany_predmet(ain_545_00,"Reprezentácie geometrických objektov",2,l).
+student_zapisany_predmet(ain_426_11,"Aplikovaný robotický seminár",2,l).
+student_zapisany_predmet(inf_187_15,"Úvod do teórie programovania",2,l).
+student_zapisany_predmet(ain_131_10,"Tvorba informačných systémov",3,z).
+student_zapisany_predmet(ain_510_15,"Linux - princípy a prostriedky",3,z).
+student_zapisany_predmet(inf_174_15,"Teória grafov",3,z).
+student_zapisany_predmet(mat_551_10,"Geometria pre grafikov (1)",3,z).
+student_zapisany_predmet(ain_132_12,"Úvod do bakalárskej práce",3,z).
+student_zapisany_predmet(ain_472_20,"Vývoj mobilných aplikácií",3,z).
+student_vyluceny_ucitel(asimko).
+student_technologia(java).
+student_zapisany_predmet(ain_232_17, "Ročníkový projekt (1)", 3, l).
+student_zapisany_predmet(ain_262_17, "Ročníkový projekt (2)", 3, l).
+student_zapisany_predmet(ain_244_15, "Webové aplikácie (2)", 3, l).
+student_zapisany_predmet(ain_316_16, "Digitálne technológie výroby", 3, l).
+student_zapisany_predmet(mxx_501_15, "Štatistika pre neštatistikov", 3, l).

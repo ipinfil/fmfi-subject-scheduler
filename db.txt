@@ -1,0 +1,437 @@
+%%%%%%%%%%%%%%%%% studijne bloky %%%%%%%%%%%%%%%%%
+% studijny_blok(blok_id)
+
+studijny_blok(ta). % telovychovne aktivity
+studijny_blok(cj). % cudzie jazyky
+studijny_blok(pp). % povinne predmety
+studijny_blok(pvp). % povinne volitelne predmety
+studijny_blok(vyb). % volitelne predmety
+studijny_blok(ss). % predmety statnej skusky
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%% predmety %%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% predmet(id, meno, odp. rok, semester, poc. kreditov, blok_id)
+% semester su konstanty z, l a n ak predmet nema priradeny semester
+
+predmet(mxx_110_00, "Telesná výchova a šport (1)", 1, z, 0, ta).
+predmet(mxx_120_00, "Telesná výchova a šport (2)", 1, l, 0, ta).
+predmet(mxx_232_10, "Anglický jazyk (4)", 2, l, 2, cj).
+predmet(ain_121_15, "Matematika (1) - Úvod do matematického myslenia", 1, z, 8, pp).
+predmet(ain_140_16, "Princípy počítačov - hardvér", 1, z, 6, pp).
+predmet(ain_130_16, "Programovanie (1)", 1, z, 9, pp).
+predmet(ain_112_15, "Úvod do webových technológií", 1, z, 6, pp).
+predmet(ain_188_17, "Matematika (2) - Matematická analýza", 1, l, 7, pp).
+predmet(inf_283_15, "Počítačové siete (1)", 1, l, 4, pp).
+predmet(ain_186_20, "Princípy počítačov – systémové programovanie", 1, l, 6, pp).
+predmet(ain_170_13, "Programovanie (2)", 1, l, 6, pp).
+predmet(ain_232_17, "Ročníkový projekt (1)", 1, l, 1, pp).
+predmet(inf_175_00, "Spoločenské aspekty informatiky", 1, l, 2, pp).
+predmet(ain_189_15, "Webové aplikácie (1)", 1, l, 6, pp).
+predmet(ain_221_15, "Databázy (1)", 2, z, 5, pp).
+predmet(ain_160_15, "Matematika (3) - Diskrétna matematika", 2, z, 6, pp).
+predmet(ain_180_20, "Princípy počítačov - operačné systémy", 2, z, 5, pp).
+predmet(ain_171_10, "Programovanie (3)", 2, z, 5, pp).
+predmet(ain_210_15, "Algoritmy a dátové štruktúry", 2, z, 5, pp).
+predmet(ain_211_10, "Úvod do teoretickej informatiky", 2, l, 6, pp).
+predmet(ain_222_15, "Databázy (2)", 2, l, 5, pp).
+predmet(ain_172_00, "Programovanie (4)", 2, l, 5, pp).
+predmet(ain_412_15, "Matematika (4)  - Logika pre informatikov", 2, l, 7, pp).
+predmet(ain_262_17, "Ročníkový projekt (2)", 2, l, 1, pp).
+predmet(ain_131_10, "Tvorba informačných systémov", 3, z, 6, pp).
+predmet(ain_132_12, "Úvod do bakalárskej práce", 3, z, 1, pp).
+predmet(ain_920_00, "Bakalársky seminár", 3, l, 1, pp).
+predmet(ain_251_11, "Základy podnikania a manažmentu", 3, l, 2, pp).
+predmet(ain_430_15, "Programovacie paradigmy", 3, z, 6, pvp).
+predmet(ain_304_15, "Úvod do umelej inteligencie", 3, z, 6, pvp).
+predmet(ain_301_15, "Základy počítačovej grafiky a spracovania obrazu", 3, z, 6, pvp).
+predmet(mat_551_10, "Geometria pre grafikov (1)", 3, z, 5, pvp).
+predmet(ain_305_15, "Deduktívne databázy", 3, z, 6, pvp).
+predmet(ain_105_15, "Efektívne algoritmy a zložitosť", 3, z, 6, pvp).
+predmet(ain_152_15, "Lineárna algebra", 3, z, 6, pvp).
+predmet(inf_175_18, "Pravdepodobnosť a štatistika", 3, z, 5, pvp).
+predmet(inf_174_15, "Teória grafov", 3, z, 6, pvp).
+predmet(ain_470_15, "Špecifikácia a verifikácia programov", 3, l, 6, pvp).
+predmet(mat_552_10, "Geometria pre grafikov (2)", 3, l, 3, pvp).
+predmet(ain_670_00, "Expertné systémy", 3, l, 6, pvp).
+predmet(ain_500_00, "Linux pre používateľov", 1, l, 2, pvp).
+predmet(inf_230_00, "Úvod do databázových systémov", 2, z, 5, pvp).
+predmet(ain_510_15, "Linux - princípy a prostriedky", 2, z, 3, pvp).
+predmet(mat_560_00, "Webovská grafika", 3, z, 5, pvp).
+predmet(ain_530_00, "Multimédiá", 3, z, 2, pvp).
+predmet(inf_176_15, "UNIX pre administrátorov", 3, z, 6, pvp).
+predmet(ain_303_15, "Game Engines", 3, z, 3, pvp).
+predmet(inf_183_15, "Počítačové siete (2)", 3, z, 4, pvp).
+predmet(ain_302_17, "Programovanie (5)", 3, z, 6, pvp).
+predmet(ain_472_20, "Vývoj mobilných aplikácií", 3, z, 6, pvp).
+predmet(ain_168_15, "Webové aplikácie v praxi", 3, z, 4, pvp).
+predmet(inf_520_00, "Úvod do informačnej bezpečnosti", 3, l, 4, pvp).
+predmet(ain_545_00, "Reprezentácie geometrických objektov", 3, l, 5, pvp).
+predmet(ain_408_15, "Kognitívne laboratórium", 1, z, 2, vyb).
+predmet(ain_407_15, "Kognitívne vedy: mozog a myseľ", 1, z, 3, vyb).
+predmet(inf_810_15, "Rýchlostné programovanie (1)", 1, z, 2, vyb).
+predmet(ain_406_15, "Kognitívne vedy: jazyk a kognícia", 1, l, 3, vyb).
+predmet(inf_815_15, "Rýchlostné programovanie (2)", 1, l, 2, vyb).
+predmet(inf_215_14, "Formálne jazyky a automaty (1)", 2, z, 6, vyb).
+predmet(ain_167_15, "Praktický seminár robotiky", 2, z, 3, vyb).
+predmet(ain_426_11, "Aplikovaný robotický seminár", 2, z, 1, vyb).
+predmet(ain_426_11, "Aplikovaný robotický seminár", 2, l, 1, vyb).
+predmet(inf_187_15, "Úvod do teórie programovania", 2, l, 4, vyb).
+predmet(ain_244_15, "Webové aplikácie (2)", 2, l, 4, vyb).
+predmet(ain_413_18, "Grafy, grafové algoritmy a optimalizácia", 2, l, 6, vyb).
+predmet(ain_316_16, "Digitálne technológie výroby", 2, l, 3, vyb).
+predmet(ain_245_17, "3D technológie, robotika a umelá inteligencia", 3, z, 3, vyb).
+predmet(ain_311_15, "Embedded Linux", 3, z, 2, vyb).
+predmet(mat_570_15, "Modelovacie a renderovacie techniky", 3, z, 6, vyb).
+predmet(ain_133_15, "Extrémne programovanie", 3, l, 6, vyb).
+predmet(ain_675_00, "Filozofia internetu", 3, l, 3, vyb).
+predmet(ain_611_00, "Tvorivé písanie", 3, l, 3, vyb).
+predmet(mxx_501_15, "Štatistika pre neštatistikov", 3, l, 2, vyb).
+predmet(ain_315_15, "Semištruktúrované dáta (XML, JSON a NoSQL)", 3, l, 4, vyb).
+predmet(ain_955_15, "Aplikovaná informatika", 0, n, 4, ss).
+predmet(ain_991_15, "Obhajoba bakalárskej práce", 0, n, 8, ss).
+
+%%%%%%% pomocne predikaty %%%%%%%%
+predmet_odp_rok(ID, ROK) :- predmet(ID, _, ROK, _, _, _).
+predmet_semester(ID, SEM) :- predmet(ID, _, _, SEM, _, _).
+predmet_kredity(ID, KR) :- predmet(ID, _, _, _, KR, _).
+predmet_blok(ID, BLOK) :- predmet(ID, _, _, _, _, BLOK).
+
+%%%%%%% prerekvizity %%%%%%%
+% prerekvizita(PRED_ID, PREREQ_ID) - predmet PRED_ID mas prerekvizitu PREREQ_ID
+prerekvizita(ain_186_20, ain_140_16).
+prerekvizita(ain_186_20, ain_130_16).
+prerekvizita(ain_170_13, ain_130_16).
+prerekvizita(ain_160_15, ain_121_15).
+prerekvizita(ain_180_20, ain_170_13).
+prerekvizita(ain_180_20, ain_140_16).
+prerekvizita(ain_210_15, ain_170_13).
+prerekvizita(ain_211_10, ain_160_15).
+prerekvizita(ain_211_10, ain_210_15).
+prerekvizita(ain_222_15, ain_221_15).
+prerekvizita(ain_412_15, ain_160_15).
+prerekvizita(ain_262_17, ain_232_17).
+prerekvizita(ain_132_12, ain_232_17).
+prerekvizita(ain_132_12, ain_262_17).
+prerekvizita(ain_251_11, ain_131_10).
+
+%%%%%% ucitelia %%%%%%
+% ucitel(UCITEL_ID, meno)
+ucitel(lmokus, "L. Mókus").
+ucitel(dmaslejova, "D. Mašlejová").
+ucitel(jleginusova, "J. Leginusová").
+ucitel(tkuchar, "T. Kuchár").
+ucitel(mortutay, "M. Ortutay").
+ucitel(mdovicak, "M. Dovičák").
+ucitel(jraabova, "J. Raábová").
+ucitel(bnedbalek, "B. Nedbálek").
+ucitel(abarnes, "A. Barnes").
+ucitel(tjajcayova, "T. Jajcayová").
+ucitel(jkomara, "J. Komara").
+ucitel(pnather, "P. Náther").
+ucitel(mmarkosova, "M. Markošová").
+ucitel(amihalik, "A. Mihálik").
+ucitel(mlucka, "M. Lucká").
+ucitel(jgregus, "J. Greguš").
+ucitel(fkundracik, "F. Kundracik").
+ucitel(ablaho, "A. Blaho").
+ucitel(dbezakova, "D. Bezáková").
+ucitel(ahrusecka, "A. Hrušecká").
+ucitel(rhrusecky, "R. Hrušecký").
+ucitel(mnagy, "M. Nagy").
+ucitel(zkubacek, "Z. Kubáček").
+ucitel(pvankus, "P. Vankúš").
+ucitel(fjaros, "F. Jaroš").
+ucitel(jjanacek, "J. Janáček").
+ucitel(dbernat, "D. Bernát").
+ucitel(ppetrovic, "P. Petrovič").
+ucitel(mwinczer, "M. Winczer").
+ucitel(mtomko, "M. Tomko").
+ucitel(mbarla, "M. Barla").
+ucitel(dguller, "D. Guller").
+ucitel(fgyarfas, "F. Gyarfaš").
+ucitel(asimko, "A. Šimko").
+ucitel(pborovansky, "P. Borovanský").
+ucitel(jkluka, "J. Kľuka").
+ucitel(jsiska, "J. Šiška").
+ucitel(mhomola, "M. Homola").
+ucitel(zcernekova, "Z. Černeková").
+ucitel(pfilo, "P. Filo").
+ucitel(lbenuskova, "Ľ. Beňušková").
+ucitel(mmadaras, "M. Madaras").
+ucitel(zbergerhaladova, "Z. Berger Haladová").
+ucitel(dskorvankova, "D. Škorvánková").
+ucitel(lbalko, "Ľ. Balko").
+ucitel(tvinar, "T. Vinař").
+ucitel(abalaz, "A. Baláž").
+ucitel(vboza, "V. Boža").
+ucitel(rjajcay, "R. Jajcay").
+ucitel(rharman, "R. Harman").
+ucitel(lfilova, "L. Filová").
+ucitel(emacajova, "E. Mačajová").
+ucitel(mskoviera, "M. Škoviera").
+ucitel(dgruska, "D. Gruska").
+ucitel(tplachetka, "T. Plachetka").
+ucitel(jmazak, "J. Mazák").
+ucitel(aferko, "A. Ferko").
+ucitel(mmakovnik, "M. Makovník").
+ucitel(llucan, "Ľ. Lúčan").
+ucitel(alucny, "A. Lúčny").
+ucitel(lsalanci, "Ľ. Salanci").
+ucitel(mkrupa, "M. Krupa").
+ucitel(rmraz, "R. Mráz").
+ucitel(mtuna, "M. Tuna").
+ucitel(ehamerlik, "E. Hamerlik").
+ucitel(dolejar, "D. Olejár").
+ucitel(mrjasko, "M. Rjaško").
+ucitel(skudlickova, "S. Kudličková").
+ucitel(mbatorova, "M. Bátorová").
+ucitel(jrybar, "J. Rybár").
+ucitel(bcimrova, "B. Cimrová").
+ucitel(brovan, "B. Rovan").
+ucitel(ssadovsky, "Š. Sádovský").
+ucitel(lkiss, "L. Kiss").
+ucitel(iprivara, "I. Prívara").
+ucitel(jvasko, "J. Vaško").
+ucitel(mmaly, "M. Malý").
+ucitel(jzizka, "J. Žižka").
+ucitel(tkovacovsky, "T. Kovačovský").
+ucitel(rdurikovic, "R. Ďurikovič").
+ucitel(jmacutek, "J. Mačutek").
+ucitel(mbalaz, "M. Baláž").
+
+% ucitel - predmet
+predmet_ucitel(mxx_110_00, lmokus).
+predmet_ucitel(mxx_110_00, dmaslejova).
+predmet_ucitel(mxx_110_00, jleginusova).
+predmet_ucitel(mxx_110_00, tkuchar).
+predmet_ucitel(mxx_110_00, mortutay).
+predmet_ucitel(mxx_110_00, mdovicak).
+predmet_ucitel(mxx_110_00, jraabova).
+predmet_ucitel(mxx_110_00, bnedbalek).
+predmet_ucitel(mxx_120_00, tkuchar).
+predmet_ucitel(mxx_120_00, dmaslejova).
+predmet_ucitel(mxx_120_00, lmokus).
+predmet_ucitel(mxx_120_00, jleginusova).
+predmet_ucitel(mxx_120_00, mortutay).
+predmet_ucitel(mxx_120_00, mdovicak).
+predmet_ucitel(mxx_120_00, jraabova).
+predmet_ucitel(mxx_120_00, bnedbalek).
+predmet_ucitel(mxx_232_10, abarnes).
+predmet_ucitel(ain_121_15, tjajcayova).
+predmet_ucitel(ain_121_15, jkomara).
+predmet_ucitel(ain_121_15, pnather).
+predmet_ucitel(ain_121_15, mmarkosova).
+predmet_ucitel(ain_121_15, amihalik).
+predmet_ucitel(ain_121_15, mlucka).
+predmet_ucitel(ain_140_16, jgregus).
+predmet_ucitel(ain_140_16, fkundracik).
+predmet_ucitel(ain_130_16, ablaho).
+predmet_ucitel(ain_130_16, dbezakova).
+predmet_ucitel(ain_130_16, ahrusecka).
+predmet_ucitel(ain_112_15, rhrusecky).
+predmet_ucitel(ain_112_15, mnagy).
+predmet_ucitel(ain_188_17, zkubacek).
+predmet_ucitel(ain_188_17, pvankus).
+predmet_ucitel(ain_188_17, fjaros).
+predmet_ucitel(ain_188_17, jkomara).
+predmet_ucitel(inf_283_15, jjanacek).
+predmet_ucitel(inf_283_15, dbernat).
+predmet_ucitel(ain_186_20, ppetrovic).
+predmet_ucitel(ain_186_20, ablaho).
+predmet_ucitel(ain_170_13, ablaho).
+predmet_ucitel(inf_175_00, mwinczer).
+predmet_ucitel(ain_189_15, rhrusecky).
+predmet_ucitel(ain_189_15, mnagy).
+predmet_ucitel(ain_221_15, mtomko).
+predmet_ucitel(ain_221_15, mbarla).
+predmet_ucitel(ain_160_15, tjajcayova).
+predmet_ucitel(ain_160_15, jkomara).
+predmet_ucitel(ain_160_15, pnather).
+predmet_ucitel(ain_160_15, dguller).
+predmet_ucitel(ain_180_20, ppetrovic).
+predmet_ucitel(ain_171_10, fgyarfas).
+predmet_ucitel(ain_210_15, ablaho).
+predmet_ucitel(ain_210_15, dbezakova).
+predmet_ucitel(ain_211_10, mwinczer).
+predmet_ucitel(ain_211_10, ablaho).
+predmet_ucitel(ain_222_15, asimko).
+predmet_ucitel(ain_172_00, pborovansky).
+predmet_ucitel(ain_412_15, jkluka).
+predmet_ucitel(ain_412_15, jsiska).
+predmet_ucitel(ain_412_15, mhomola).
+predmet_ucitel(ain_131_10, ppetrovic).
+predmet_ucitel(ain_132_12, ppetrovic).
+predmet_ucitel(ain_132_12, ablaho).
+predmet_ucitel(ain_920_00, ppetrovic).
+predmet_ucitel(ain_920_00, ablaho).
+predmet_ucitel(ain_920_00, zcernekova).
+predmet_ucitel(ain_251_11, pfilo).
+predmet_ucitel(ain_430_15, pborovansky).
+predmet_ucitel(ain_304_15, lbenuskova).
+predmet_ucitel(ain_304_15, mmarkosova).
+predmet_ucitel(ain_301_15, mmadaras).
+predmet_ucitel(ain_301_15, zbergerhaladova).
+predmet_ucitel(ain_301_15, dskorvankova).
+predmet_ucitel(mat_551_10, lbalko).
+predmet_ucitel(ain_305_15, mhomola).
+predmet_ucitel(ain_305_15, asimko).
+predmet_ucitel(ain_305_15, jsiska).
+predmet_ucitel(ain_305_15, jkluka).
+predmet_ucitel(ain_105_15, tvinar).
+predmet_ucitel(ain_105_15, abalaz).
+predmet_ucitel(ain_105_15, vboza).
+predmet_ucitel(ain_152_15, tjajcayova).
+predmet_ucitel(ain_152_15, rjajcay).
+predmet_ucitel(inf_175_18, rharman).
+predmet_ucitel(inf_175_18, lfilova).
+predmet_ucitel(inf_174_15, emacajova).
+predmet_ucitel(inf_174_15, mskoviera).
+predmet_ucitel(ain_470_15, dgruska).
+predmet_ucitel(ain_470_15, jkomara).
+predmet_ucitel(ain_470_15, jkluka).
+predmet_ucitel(mat_552_10, lbalko).
+predmet_ucitel(ain_670_00, dguller).
+predmet_ucitel(ain_500_00, mnagy).
+predmet_ucitel(inf_230_00, tplachetka).
+predmet_ucitel(inf_230_00, jmazak).
+predmet_ucitel(ain_510_15, mnagy).
+predmet_ucitel(mat_560_00, aferko).
+predmet_ucitel(mat_560_00, mmakovnik).
+predmet_ucitel(ain_530_00, llucan).
+predmet_ucitel(inf_176_15, jjanacek).
+predmet_ucitel(inf_176_15, dbernat).
+predmet_ucitel(ain_303_15, alucny).
+predmet_ucitel(inf_183_15, jjanacek).
+predmet_ucitel(ain_302_17, lsalanci).
+predmet_ucitel(ain_472_20, pborovansky).
+predmet_ucitel(ain_168_15, mkrupa).
+predmet_ucitel(ain_168_15, rmraz).
+predmet_ucitel(ain_168_15, mtuna).
+predmet_ucitel(ain_168_15, ehamerlik).
+predmet_ucitel(inf_520_00, dolejar).
+predmet_ucitel(inf_520_00, mrjasko).
+predmet_ucitel(ain_545_00, skudlickova).
+predmet_ucitel(ain_545_00, mbatorova).
+predmet_ucitel(ain_408_15, jrybar).
+predmet_ucitel(ain_407_15, bcimrova).
+predmet_ucitel(ain_407_15, jrybar).
+predmet_ucitel(inf_810_15, vboza).
+predmet_ucitel(ain_406_15, jrybar).
+predmet_ucitel(inf_815_15, vboza).
+predmet_ucitel(inf_215_14, brovan).
+predmet_ucitel(inf_215_14, ssadovsky).
+predmet_ucitel(inf_215_14, lkiss).
+predmet_ucitel(ain_167_15, ppetrovic).
+predmet_ucitel(ain_426_11, ppetrovic).
+predmet_ucitel(inf_187_15, iprivara).
+predmet_ucitel(ain_244_15, mnagy).
+predmet_ucitel(ain_413_18, tjajcayova).
+predmet_ucitel(ain_316_16, ppetrovic).
+predmet_ucitel(ain_316_16, jvasko).
+predmet_ucitel(ain_245_17, mmaly).
+predmet_ucitel(ain_245_17, jzizka).
+predmet_ucitel(ain_245_17, tkovacovsky).
+predmet_ucitel(ain_311_15, jsiska).
+predmet_ucitel(mat_570_15, rdurikovic).
+predmet_ucitel(ain_133_15, fgyarfas).
+predmet_ucitel(ain_675_00, fgyarfas).
+predmet_ucitel(ain_611_00, fgyarfas).
+predmet_ucitel(mxx_501_15, jmacutek).
+predmet_ucitel(ain_315_15, mbalaz).
+predmet_ucitel(ain_315_15, jkluka).
+
+%%%%% tematicke okruhy %%%%%
+tematicky_okruh(webdevelopment, "Web Development").
+tematicky_okruh(desktopdevelopment, "Desktop Development").
+tematicky_okruh(programovaciejazyky, "Programovacie jazyky").
+tematicky_okruh(algoritmy, "Algorimty").
+tematicky_okruh(databazy, "Databazy").
+tematicky_okruh(matematika, "Matematika").
+tematicky_okruh(telesnavychova, "Telsena vychova").
+tematicky_okruh(jazyky, "Jazyky").
+tematicky_okruh(vsetko, "Vsetko").
+
+predmet_tematicky_okruh(mxx_110_00, telesnavychova).
+predmet_tematicky_okruh(mxx_120_00, telesnavychova).
+predmet_tematicky_okruh(mxx_232_10, jazyky).
+predmet_tematicky_okruh(ain_121_15, matematika).
+predmet_tematicky_okruh(ain_130_16, programovaciejazyky).
+predmet_tematicky_okruh(ain_112_15, webdevelopment).
+predmet_tematicky_okruh(ain_188_17, matematika).
+predmet_tematicky_okruh(ain_170_13, programovaciejazyky).
+predmet_tematicky_okruh(ain_189_15, webdevelopment).
+predmet_tematicky_okruh(ain_221_15, databazy).
+predmet_tematicky_okruh(ain_160_15, matematika).
+predmet_tematicky_okruh(ain_171_10, programovaciejazyky).
+predmet_tematicky_okruh(ain_210_15, algoritmy).
+predmet_tematicky_okruh(ain_211_10, algoritmy).
+predmet_tematicky_okruh(ain_222_15, databazy).
+predmet_tematicky_okruh(ain_172_00, programovaciejazyky).
+predmet_tematicky_okruh(ain_412_15, matematika).
+predmet_tematicky_okruh(ain_430_15, programovaciejazyky).
+predmet_tematicky_okruh(ain_304_15, matematika).
+predmet_tematicky_okruh(ain_305_15, databazy).
+predmet_tematicky_okruh(ain_105_15, algoritmy).
+predmet_tematicky_okruh(ain_152_15, matematika).
+predmet_tematicky_okruh(inf_175_18, matematika).
+predmet_tematicky_okruh(inf_230_00, databazy).
+predmet_tematicky_okruh(mat_560_00, webdevelopment).
+predmet_tematicky_okruh(ain_302_17, programovaciejazyky).
+predmet_tematicky_okruh(ain_472_20, programovaciejazyky).
+predmet_tematicky_okruh(ain_168_15, webdevelopment).
+predmet_tematicky_okruh(inf_810_15, programovaciejazyky).
+predmet_tematicky_okruh(inf_815_15, programovaciejazyky).
+predmet_tematicky_okruh(inf_187_15, algoritmy).
+predmet_tematicky_okruh(ain_244_15, webdevelopment).
+predmet_tematicky_okruh(ain_133_15, programovaciejazyky).
+predmet_tematicky_okruh(PRED_ID, vsetko) :- predmet(PRED_ID, _, _, _, _, _).
+
+%%%%% technologie %%%%%
+technologia(php, "PHP").
+technologia(java, "Java").
+technologia(python, "Python").
+technologia(vsetko, "Vsetko").
+predmet_technologia(ain_130_16, python).
+predmet_technologia(ain_170_13, python).
+predmet_technologia(ain_172_00, java).
+predmet_technologia(ain_222_15, java).
+predmet_technologia(ain_189_15, php).
+predmet_technologia(PRED_ID, vsetko) :- predmet(PRED_ID, _, _, _, _, _).
+
+% ak odporucis predmet, odporuc aj prerekvizitu
+odporuceny_predmet(PREREQ_ID, NAME, SEM, "ano") :- odporuceny_predmet(PRED_ID, _, _, _), prerekvizita(PRED_ID, PREREQ_ID), not student_zapisany_predmet(PREREQ_ID, _, _, _), predmet(PREREQ_ID, NAME, _, SEM, _, _), not odporuceny_predmet(PREREQ_ID, _, _, "nie").
+
+% ak mas zapisany predmet a nemas jeho prerekvizitu, odporuc prerekvizitu
+odporuceny_predmet(PREREQ_ID, NAME, SEM, "ano") :- student_zapisany_predmet(PRED_ID, _, _, _), prerekvizita(PRED_ID, PREREQ_ID), not student_zapisany_predmet(PREREQ_ID, _, _, _), predmet(PREREQ_ID, NAME, _, SEM, _, _), not odporuceny_predmet(PREREQ_ID, _, _, "nie").
+
+%%%%%% odporucaci mechanizmus %%%%%%%
+% pocitame s:
+% student_tematicky_okruh(TEMATICKY_OKRUH), kde TEMATICKY_OKRUH je konstanta - znamena ze student ma zaujem o technologicky okruh
+% student_technologia(TECHNOLOGIA), kde TECHNOLOGIA je konstanta - znamena ze student ma zaujem o technologiu
+% student_vyluceny_ucitel(UCITEL_ID), analogicky ^
+% student_zapisany_predmet(PREDMET_ID, meno_predmetu, rok, semester) - dostaneme formou faktov
+
+odporuceny_predmet(PREDMET_ID, NAME, SEM, "nie") :- predmet(PREDMET_ID, NAME, B, SEM, D, E), not student_zapisany_predmet(PREDMET_ID, _, _, _), student_vyluceny_ucitel(UCITEL_ID), #sum {1: predmet_ucitel(PREDMET_ID, UCITEL_ID)} < 1, student_tematicky_okruh(TEMATICKY_OKRUH), predmet_tematicky_okruh(PREDMET_ID, TEMATICKY_OKRUH), student_technologia(TECHNOLOGIA), predmet_technologia(PREDMET_ID, TECHNOLOGIA).
+
+nezapisany_predmet(PREDMET_ID, NAME, SEM) :- predmet(PREDMET_ID, NAME, _, SEM, _, _), not student_zapisany_predmet(PREDMET_ID, _, _, _).
+
+semester(SEM) :- predmet(_, _, _, SEM, _, _).
+rok_studia(YEAR) :- predmet(_, _, YEAR, _, _, _).
+
+pocet_kreditov_odporucene(SUM) :- #sum {KR, PRED_ID: odporuceny_predmet(PRED_ID, _, _, _), predmet_kredity(PRED_ID, KR)} = SUM.
+pocet_kreditov_zapisane_povinne_volitelne(SUM) :- #sum {KR, PRED_ID: student_zapisany_predmet(PRED_ID, _, _, _), predmet_kredity(PRED_ID, KR), predmet(PRED_ID, _, _, _, _, pvp)} = SUM.
+pocet_kreditov_zapisane(SUM) :- #sum {KR, PRED_ID: student_zapisany_predmet(PRED_ID, _, _, _), predmet_kredity(PRED_ID, KR)} = SUM.
+pocet_kreditov_zapisane_semester_rok(SUM, SEM, YEAR) :- #sum {KR, PRED_ID: student_zapisany_predmet(PRED_ID, _, YEAR, SEM), predmet_kredity(PRED_ID, KR)} = SUM, semester(SEM), rok_studia(YEAR).
+
+pocet_predmetov_zapisane(COUNT) :- #count {PRED_ID: student_zapisany_predmet(PRED_ID, _, _, _)} = COUNT.
+pocet_predmetov_zapisane_semester_rok(COUNT, SEM, YEAR) :- #count {PRED_ID: student_zapisany_predmet(PRED_ID, _, YEAR, SEM)} = COUNT, semester(SEM), rok_studia(YEAR).
+
+chyba_zapisana_prerekvizita(PRED_ID, PRED_NAME, PREREQ_ID, PREREQ_NAME) :- student_zapisany_predmet(PRED_ID, PRED_NAME, _, _), prerekvizita(PRED_ID, PREREQ_ID), not student_zapisany_predmet(PREREQ_ID, _, _, _), predmet(PREREQ_ID, PREREQ_NAME, _, _, _, _).
+
+
+#defined student_zapisany_predmet/4.
+#defined student_technologia/1.
+#defined student_tematicky_okruh/1.
+#defined student_vyluceny_ucitel/1.

@@ -1,0 +1,10 @@
+beautifulsoup4==4.10.0
+cffi==1.15.0
+clingo==5.5.1
+colorama==0.4.4
+commonmark==0.9.1
+lxml==4.7.1
+pycparser==2.21
+Pygments==2.10.0
+rich==10.16.1
+soupsieve==2.3.1
