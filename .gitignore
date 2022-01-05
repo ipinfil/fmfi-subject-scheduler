@@ -127,8 +127,5 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
-<<<<<<< HEAD
 .DS_Store
-students/*
-=======
->>>>>>> 8488a96 (Initial commit)
+students/*.txt
