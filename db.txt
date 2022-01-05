@@ -415,6 +415,8 @@ odporuceny_predmet(PREREQ_ID, NAME, SEM, "ano") :- student_zapisany_predmet(PRED
 
 odporuceny_predmet(PREDMET_ID, NAME, SEM, "nie") :- predmet(PREDMET_ID, NAME, B, SEM, D, E), not student_zapisany_predmet(PREDMET_ID, _, _, _), student_vyluceny_ucitel(UCITEL_ID), #sum {1: predmet_ucitel(PREDMET_ID, UCITEL_ID)} < 1, student_tematicky_okruh(TEMATICKY_OKRUH), predmet_tematicky_okruh(PREDMET_ID, TEMATICKY_OKRUH), student_technologia(TECHNOLOGIA), predmet_technologia(PREDMET_ID, TECHNOLOGIA).
 
+odporuceny_predmet(PREDMET_ID, NAME, SEM, "nie") :- predmet(PREDMET_ID, NAME, B, SEM, D, E), not student_zapisany_predmet(PREDMET_ID, _, _, _), #sum {1, UCITEL_ID : student_vyluceny_ucitel(UCITEL_ID)} < 1, student_tematicky_okruh(TEMATICKY_OKRUH), predmet_tematicky_okruh(PREDMET_ID, TEMATICKY_OKRUH), student_technologia(TECHNOLOGIA), predmet_technologia(PREDMET_ID, TECHNOLOGIA).
+
 nezapisany_predmet(PREDMET_ID, NAME, SEM) :- predmet(PREDMET_ID, NAME, _, SEM, _, _), not student_zapisany_predmet(PREDMET_ID, _, _, _).
 
 semester(SEM) :- predmet(_, _, _, SEM, _, _).
