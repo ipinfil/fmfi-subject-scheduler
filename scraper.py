@@ -4,6 +4,7 @@ Resp. iba na vlastne nebezpecenstvo. :)
 """
 import unicodedata
 from typing import final
+
 from bs4 import BeautifulSoup
 
 
