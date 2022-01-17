@@ -129,7 +129,7 @@ class BoundDatabase(Database):
         self.main_db = main_db
 
     def remove_atoms(
-        self, predicates: str | list, save=False, filter: Callable | None = None
+        self, predicates: str | list, save=False, _filter: Callable | None = None
     ):
         """
         Remove atoms from the student's database.
@@ -143,7 +143,7 @@ class BoundDatabase(Database):
         counter = len(self.atoms)
         tmp_atoms = []
         for atom in self.atoms:
-            if atom.name in predicates and (filter is None or filter(atom)):
+            if atom.name in predicates and (_filter is None or _filter(atom)):
                 continue
             tmp_atoms.append(atom)
         self.atoms = tmp_atoms
