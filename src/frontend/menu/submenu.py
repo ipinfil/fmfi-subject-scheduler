@@ -1,149 +1,8 @@
-from abc import ABCMeta, abstractmethod
+from typing import Callable
 from rich import print
-from typing import Callable, Type
-from config import DEBUG
-from backend.db import BoundDatabase
-from frontend.ui import UserInterface
+from .menu import Menu
 from backend.system import PredicateManager
-
-
-class Menu(metaclass=ABCMeta):
-    """
-    Abstract class defining generally used methods in menu classes.
-    """
-
-    title = None
-    menu_items = None
-    handlers = None
-    ui = None
-    is_running = False
-    menu_table = None
-
-    def __init__(self, ui: UserInterface):
-        """
-        Save UserInterface reference, create menu items.
-        """
-        self.ui = ui
-
-        self._create_menu()
-
-        if self.title is None or self.menu_items is None or self.handlers is None:
-            raise NotImplementedError()
-
-    def run(self):
-        """
-        Run the menu in cycle.
-        """
-        if self.menu_table is None:
-            self._get_menu_table()
-
-        self.is_running = True
-        while self.is_running:
-            print(self.menu_table)
-            self._handle_action()
-
-    def _get_menu_table(self):
-        """
-        Get menu table for printing.
-        """
-        self.menu_table = self.ui.get_menu(self.menu_items, self.title)
-
-    def _handle_action(self):
-        """
-        Handle user action.
-        """
-        print("[bold green]Zadajte akciu: [/bold green]", end="")
-        action = int(input().strip()) - 1
-        try:
-            return self.handlers[action]()
-        except IndexError as e:
-            if DEBUG:
-                raise e
-            print(
-                "[bold red]Takáto akcia neexistuje. Zadajte voľbu ešte raz.[/bold red]"
-            )
-            return self._handle_action()
-
-    @abstractmethod
-    def _create_menu(self):
-        """
-        Define menu items and handlers.
-        """
-        pass
-
-    @abstractmethod
-    def _close(self):
-        """
-        Close the menu.
-        """
-        pass
-
-
-class MainMenu(Menu):
-    """
-    MainMenu class.
-    """
-
-    title = "Hlavné menu"
-
-    def _create_menu(self):
-        self.menu_items = [
-            "Prihlásenie" if not self.ui.app.logged_in else "Odhlásenie",
-            "Zobraziť dáta",
-        ]
-
-        self.handlers = [
-            self._login if not self.ui.app.logged_in else self._logout,
-            self._run_menu(ShowDataMenu),
-        ]
-
-        if self.ui.app.logged_in:
-            self.menu_items += ["Správa rozvrhu", "Správa preferencií"]
-            self.handlers += [
-                self._run_menu(SubjectsMenu),
-                self._run_menu(PreferencesMenu),
-            ]
-
-        self.menu_items.append("Vypnúť")
-        self.handlers.append(self._close)
-
-    def _login(self):
-        """
-        Login handler.
-        """
-        print()
-        print("[bold green]Zadajte svoje univerzitné meno: [/bold green]", end="")
-        name = input().strip()
-        self.ui.app.login(name)
-        self._create_menu()
-        self._get_menu_table()
-
-        print("[bold blue]Boli ste prihlásený.[/bold blue]")
-        print()
-
-    def _logout(self):
-        """
-        Logout handler.
-        """
-        print()
-
-        self.ui.app.logout()
-        self._create_menu()
-        self._get_menu_table()
-
-        print("[bold blue]Boli ste odhlásený.[/bold blue]")
-        print()
-
-    def _close(self):
-        self.ui.app.close()
-
-    def _run_menu(self, menu_class: Type[Menu]) -> Callable:
-        """
-        Run submenus.
-        """
-        menu = menu_class(self.ui)
-        return menu.run
-
+from backend.db import BoundDatabase
 
 class Submenu(Menu):
     """
@@ -159,15 +18,15 @@ class Submenu(Menu):
             and isinstance(self.handlers, list)
             and len(self.handlers) > 0
         ):
-            if self.menu_items[0] != MainMenu.title:
-                self.menu_items.insert(0, MainMenu.title)
+            if self.menu_items[0] != "Hlavné menu":
+                self.menu_items.insert(0, "Hlavné menu")
 
             if len(self.handlers) != len(self.menu_items):
                 self.handlers.insert(0, self._close)
 
         return super()._create_menu()
 
-    def _visualize_predicate(self, predicate: int, filter: Callable | None = None):
+    def _visualize_predicate(self, predicate: int, _filter: Callable | None = None):
         """
         Print table containing atoms with provided predicate.
         """
@@ -177,7 +36,7 @@ class Submenu(Menu):
                 PredicateManager.get_predicate_argument_titles(predicate),
                 PredicateManager.get_predicate_title(predicate),
                 PredicateManager.get_predicate_name(predicate),
-                filter,
+                _filter,
             )
             print(table)
 

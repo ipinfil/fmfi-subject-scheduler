@@ -12,7 +12,7 @@ class System:
         return students_db_path + name + ".txt"
 
     @staticmethod
-    def handle_login(name: str) -> bool:
+    def handle_login(name: str) -> str:
         """
         Create student's database if the student's first time logged in. Otherwise just return the
         database content.

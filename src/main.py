@@ -7,7 +7,7 @@ from backend.db import Database
 from backend.system import System
 from frontend.ui import UserInterface
 from config import db_path as config_db_path
-from frontend.menu import MainMenu
+from frontend.menu.mainmenu import MainMenu
 
 
 class Application:
